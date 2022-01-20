@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>축구팜</title>
+</head>
+<style>
+    background {
+        background-image: url('https://images.france.fr/zeaejvyq9bhj/1ghnNml14x9ld9ArjWOnzd/cd079f569a881dc12d682b262c6a4544/___master1305__GettyImages.jpg');
+    }
+
+    .container {
+        margin: auto;
+        display: block;
+
+        color: white;
+        background-image: url('https://images.france.fr/zeaejvyq9bhj/1ghnNml14x9ld9ArjWOnzd/cd079f569a881dc12d682b262c6a4544/___master1305__GettyImages.jpg');
+    }
+
+    .card-img-top {
+        border-top: 30px;
+        border-bottom: 30px;
+    }
+    .card-footer {
+        margin: auto;
+
+        font-size: 23px;
+    }
+
+    .item-order {
+        width: 500px;
+        margin: auto;
+    }
+
+    .btn-order {
+        margin: auto;
+        width: 100px;
+        margin: auto;
+        display: block;
+    }
+
+    .wrap {
+        width: 900px;
+        margin: auto;
+    }
+</style>
+<script>
+    function order(){
+        alert("주문이 완료되었습니다.")
+    }
+</script>
+<body>
+<div>
+
+</div>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">축구팜</h1>
+        <p class="lead">안녕하세요 축구팜입니다. </p>
+        <p>저희는 축구화을 판매하고 있습니다.</p>
+        <p>많은 이용 부탁드립니다.</p>
+    </div>
+    <div class="card-group">
+        <div class="card">
+            <img class="card-img-top" src="http://mstatic1.e-himart.co.kr/contents/goods/00/07/06/11/26/0007061126__P11061502863X422XX28__2_640_640.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">1. 아디00 00</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">150000원</small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://m.fasoccer.co.kr/web/product/extra/big/20191211/ffeb028bd17350b4d0e7be41a4178759.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">2. 나이0 00 1</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">170000원</small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="https://static.coupangcdn.com/image/vendor_inventory/9db3/7bb6e36ceff53871ebcfa88c77ff8ba99812b660bfc1809698389ecfd22f.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">3. 나이키 00 2</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">160000원</small>
+            </div>
+        </div>
+    </div>
+    <div class="item-order">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">주문자이름</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">수량</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>-- 제품을 선택하세요--</option>
+                <option value="1">1. 아디00 00</option>
+                <option value="2">2. 나이0 00 1</option>
+                <option value="3">3. 나이키 00 2</option>
+
+            </select>
+        </div>
+        <div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>-- 수량을 선택하세요 --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">주소</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">전화번호</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" onclick="order()" class="btn btn-primary btn-order">주문하기</button>
+    </div>
+</div>
+</body>
+
+</html>
