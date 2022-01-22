@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>초코팜</title>
+
+    <style>
+        .choco-img {
+            width: 500px;
+            height: 400px;
+
+            background-image: url('data:image/jpeg;base64,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');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .choco-order {
+            width: 500px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ment {
+            display: block;
+
+            width: 500px;
+            height: 100px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .wrap {
+            margin: auto;
+            display: block;
+            border: 300px;
+            border-radius:
+        }
+
+        .price {
+            font-size: 20px;
+        }
+
+        .customer {
+            font-size: 25px;
+        }
+
+        .form {
+            margin: auto;
+        }
+
+        .all {
+            margin-top: 0px;
+            margin-left: 700px;
+
+        }
+    </style>
+
+    <script>
+        function hey() {
+            alert('주문되셨습니다!')
+        }
+    </script>
+</head>
+
+<body>
+<div class="all">
+    <div class="wrap">
+        <div class="choco-img"></div>
+        <div class="ment">
+            <h3 class="title-ment">초콜릿을 판매합니다.<span class="price" style="color: red"> 가격 : 개당 2000원!</span></h3>
+            <p>배고플 떄 먹으면 힘이 나는 초콜릿! 부담없이 주문해보세요~</p>
+        </div>
+        <div class="form">
+            <h3 class="title-top">주문하기</h3>
+            <div class="choco-order">
+                <div class="input-function">
+                    <div class="input-function-prepend">
+                        <span class="customer">주문자 이름</span>
+                        <input type="text"/>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <span class="customer">수량</span>
+                        <select>
+                            <option selected>--수량을 선택하세요 --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="input-function">
+                <div class="input-function-prepend">
+                    <span class="customer">주소</span>
+                    <input type="text"/>
+                </div>
+            </div>
+            <div class="input-function">
+                <div class="input-function-prepend">
+                    <span class="customer">전화번호</span>
+                    <input type="text"/>
+                </div>
+            </div>
+            <button type="button" onclick="hey()"
+            "btn btn-primary btn-lg">주문하기</button>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
