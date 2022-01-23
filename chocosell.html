@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>초코팜</title>
+
+    <style>
+        body {
+            background-image: url("https://cdn.pixabay.com/photo/2016/10/22/19/47/candy-store-1761527_1280.jpg");
+
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 100px;
+            color: white;
+        }
+
+        .card {
+            width: 150px;
+            height: 80px;
+            margin: 50px 30px 50px 30px;
+        }
+
+        .choco-order {
+            margin-top: 0px;
+            margin-left: 700px;
+        }
+
+        .input-choco-prepend {
+            font-weight: bold;
+            color: white;
+        }
+
+        .name {
+            margin-bottom: 10px;
+        }
+
+        .address {
+            margin-bottom: 10px;
+        }
+
+        .choco-product {
+            margin-bottom: 10px;
+        }
+
+        .choco-quatity {
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            color: white;
+        }
+
+        .card-text {
+            color: white;
+        }
+    </style>
+
+    <script>
+        function ok() {
+            alert('주문이 완료되었습니다')
+        }
+
+    </script>
+</head>
+
+<body>
+<h4>초코팜</h4>
+<div class="choco-order">
+    <div class="input-choco-prepend">
+        <p>주문서</p>
+        <div class=name>
+            <span>주문자 이름 : </span>
+            <input type="text">
+        </div>
+    </div>
+    <div class="input-choco-prepend">
+        <div class="address">
+            <span>주소 : </span>
+            <input type="text">
+        </div>
+    </div>
+    <div class="input-choco-prepend">
+        <div class="choco-product">
+            <span>제품 선택 : </span>
+            <select>
+                <option selected>-- 제품을 선택하세요. --</option>
+                <option value='1'>1번 초콜릿</option>
+                <option value='2'>2번 초콜릿</option>
+                <option value='3'>3번 초콜릿</option>
+                <option value='4'>4번 초콜릿</option>
+                <option value='5'>5번 초콜릿</option>
+            </select>
+        </div>
+        <div class="choco-quatity">
+            <span>수량 :</span>
+            <select>
+                <option selected>-- 수량을 선택하세요. --</option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+            </select>
+        </div>
+    </div>
+    <button type="button" onclick="ok()" class="btn btn-primary btn-lg">주문하기</button>
+</div>
+
+<div class="card-group">
+    <div class="card">
+        <img class="card-img-top" src="https://cdn.pixabay.com/photo/2016/04/17/19/16/chocolate-1335353_1280.jpg"
+             alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">1번 초콜릿</h5>
+            <p class="card-text">가격 : 3000원</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_HKvCIWOhAYcy9DXJe8TCi1loGkG8A3QfzA&usqp=CAU"
+             alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">2번 초콜릿</h5>
+            <p class="card-text">가격 : 5000원</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO7X7okkDmlN64Tgxdh4xyMDVMbPigHBa6oA&usqp=CAU"
+             alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">3번 초콜릿</h5>
+            <p class="card-text">가격 : 3000원</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="https://cdn.pixabay.com/photo/2018/02/01/20/22/chocolate-bar-3124025_1280.png"
+             alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">4번 초콜릿</h5>
+            <p class="card-text">가격 : 3000원</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZhVdPSjw-TOZ3lTSy7rKOeEcIdDb_N8bvw&usqp=CAU"
+             alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">5번 초콜릿</h5>
+            <p class="card-text">가격 : 2000원</p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
