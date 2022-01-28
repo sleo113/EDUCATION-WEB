@@ -1,111 +1,144 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 
 <head>
+    <!-- Webpage Title -->
+    <title>모두의 책리뷰 | 스파르타코딩클럽</title>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
 
-    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
-    <style>
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            showReview();
+        });
+
+        function makeReview() {
+            let title = $("#title").val();
+            let author = $("#author").val();
+            let review = $("#bookReview").val();
+
+            $.ajax({
+                type: "POST",
+                url: "/review",
+                data: {title_give: title, author_give: author, review_give: review},
+                success: function (response) {
+                    alert(response["msg"]);
+                    window.location.reload();
+                }
+            })
+        }
+
+        function showReview() {
+            $.ajax({
+                type: "GET",
+                url: "/review",
+                data: {},
+                success: function (response) {
+                    let reviews = response['all_reviews'];
+                    for (let i = 0; i < reviews.length; i++) {
+                        let title = revies[i]['title']
+                        let author = revies[i]['author`']
+                        let review = revies[i]['review`']
+
+                        let temp_html = <tr>
+                            <td>${title}</td>
+                            <td>${author}</td>
+                            <td>${review}</td>
+                        </tr>``
+
+                        $('#reviews-box').append(temp_html)
+                    }
+                }
+            })
+        }
+    </script>
+
+    <style type="text/css">
         * {
-            font-family: 'Hi Melody', cursive;
+            font-family: "Do Hyeon", sans-serif;
         }
 
-        .wrap {
-            width: 900px;
-            margin: auto;
-            display: block;
+        h1,
+        h5 {
+            display: inline;
         }
 
-        .comment {
-            color: blue;
-            font-weight: bold;
+        .info {
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
+        .review {
+            text-align: center;
+        }
+
+        .reviews {
+            margin-top: 100px;
+        }
     </style>
-
 </head>
 
 <body>
-<div class="wrap">
-    <div class="jumbotron">
-        <h1 class="display-4">나홀로 링크 메모장!</h1>
-        <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
-        <hr class="my-4">
-        <p></p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
-        </p>
+<div class="container">
+    <img src="https://previews.123rf.com/images/maxxyustas/maxxyustas1511/maxxyustas151100002/47858355-education-concept-books-and-textbooks-on-the-bookshelf-3d.jpg"
+         class="img-fluid" alt="Responsive image">
+    <div class="info">
+        <h1>읽은 책에 대해 말씀해주세요.</h1>
+        <p>다른 사람을 위해 리뷰를 남겨주세요! 다 같이 좋은 책을 읽는다면 다 함께 행복해질 수 있지 않을까요?</p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">제목</span>
+            </div>
+            <input type="text" class="form-control" id="title">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">저자</span>
+            </div>
+            <input type="text" class="form-control" id="author">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">리뷰</span>
+            </div>
+            <textarea class="form-control" id="bookReview"
+                      cols="30"
+                      rows="5" placeholder="140자까지 입력할 수 있습니다."></textarea>
+        </div>
+        <div class="review">
+            <button onclick="makeReview()" type="button" class="btn btn-primary">리뷰 작성하기</button>
+        </div>
     </div>
-    <div class="card-columns">
-        <div class="card">
-            <img class="card-img-top"
-                 src="https://w.namu.la/s/488a9fbef65fb76fde0be88ec5f7c911b6e8cb09ad0329fca66a4c2bd1e5cf8d794d02687e7addb356bf581047ac8ba74d6be8f49cfc1e279b257224d5d99495f301de4e41e85b70fee33fd3486f4c8e"
-                 alt="Card image cap">
-            <div class="card-body">
-                <a href="http://naver.com/" class="card-title">여기 기사 제목이 들어가죠.</a>
-                <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...;</p>
-                <p class="card-bottom comment">여기에 코멘트가 들어갑니다.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top"
-                 src="https://w.namu.la/s/488a9fbef65fb76fde0be88ec5f7c911b6e8cb09ad0329fca66a4c2bd1e5cf8d794d02687e7addb356bf581047ac8ba74d6be8f49cfc1e279b257224d5d99495f301de4e41e85b70fee33fd3486f4c8e"
-                 alt="Card image cap">
-            <div class="card-body">
-                <a href="http://naver.com/" class="card-title">여기 기사 제목이 들어가죠.</a>
-                <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...;</p>
-                <p class="card-bottom comment">여기에 코멘트가 들어갑니다.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top"
-                 src="https://w.namu.la/s/488a9fbef65fb76fde0be88ec5f7c911b6e8cb09ad0329fca66a4c2bd1e5cf8d794d02687e7addb356bf581047ac8ba74d6be8f49cfc1e279b257224d5d99495f301de4e41e85b70fee33fd3486f4c8e"
-                 alt="Card image cap">
-            <div class="card-body">
-                <a href="http://naver.com/" class="card-title">여기 기사 제목이 들어가죠.</a>
-                <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...;</p>
-                <p class="card-bottom comment">여기에 코멘트가 들어갑니다.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top"
-                 src="https://w.namu.la/s/488a9fbef65fb76fde0be88ec5f7c911b6e8cb09ad0329fca66a4c2bd1e5cf8d794d02687e7addb356bf581047ac8ba74d6be8f49cfc1e279b257224d5d99495f301de4e41e85b70fee33fd3486f4c8e"
-                 alt="Card image cap">
-            <div class="card-body">
-                <a href="http://naver.com/" class="card-title">여기 기사 제목이 들어가죠.</a>
-                <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...;</p>
-                <p class="card-bottom comment">여기에 코멘트가 들어갑니다.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top"
-                 src="https://w.namu.la/s/488a9fbef65fb76fde0be88ec5f7c911b6e8cb09ad0329fca66a4c2bd1e5cf8d794d02687e7addb356bf581047ac8ba74d6be8f49cfc1e279b257224d5d99495f301de4e41e85b70fee33fd3486f4c8e"
-                 alt="Card image cap">
-            <div class="card-body">
-                <a href="http://naver.com/" class="card-title">여기 기사 제목이 들어가죠.</a>
-                <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...;</p>
-                <p class="card-bottom comment">여기에 코멘트가 들어갑니다.</p>
-            </div>
-        </div>
+    <div class="reviews">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">저자</th>
+                <th scope="col">리뷰</th>
+            </tr>
+            </thead>
+            <tbody id="reviews-box">
+
+            </tbody>
+        </table>
     </div>
 </div>
 </body>
